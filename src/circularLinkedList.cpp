@@ -6,7 +6,7 @@ Group: Computer Engineering             Level: Undergraduate
        (Year II / Semester I)
 Subject: COMP 202 (Data Structures and Algorithms)
 
-Lab Work 4
+Mini Project
 */
 
 #pragma once
