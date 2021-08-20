@@ -271,7 +271,7 @@ void circularLinkedList <T>::traverse(T index, char separator){
     if(this->isEmpty()){
         std::cout << "The Stack is empty." << std::endl;
     }
-    if(search(index)){
+    if(this->search(index)){
         std::cout << "TRAVERSAL STARTING FROM:" << std::endl;
         int i = 1;
         Node <T> *output = new Node <T>;
@@ -284,7 +284,7 @@ void circularLinkedList <T>::traverse(T index, char separator){
         }
     }
     else{
-        std::cout << "The data entered does not exist in the stack." << std::endl;
+        throw"The data entered does not exist in the stack.";
     }
 }
 
