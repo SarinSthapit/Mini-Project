@@ -79,6 +79,8 @@ void stackInput(){
             case 2:
                 red();
                 s2.pop();
+                s2.makeStack();
+                s2.display(' ');
                 break;
 
             case 3:
