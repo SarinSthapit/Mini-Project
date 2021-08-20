@@ -117,8 +117,9 @@ void stackInput(){
 
             case 7:
                 char index;
-                std::cout << "Enter the starting point: " << std::endl;
+                std::cout << "Enter the starting point: ";
                 std::cin >> index;
+                std::cout << std::endl;
                 s2.traverse(index, ',');
                 break;
 
