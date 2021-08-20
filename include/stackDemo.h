@@ -16,7 +16,7 @@ Mini Project
 
 void stackDemo(){
     sky_blue();
-    std::cout << "STACK DEMO:\n" << std::endl; 
+    std::cout << "STACK DEMONSTRATION:\n" << std::endl; 
         circularLinkedListStack <int> s(5);
         if(s.isEmpty()){
             std::cout << "The Stack is empty." << std::endl;
