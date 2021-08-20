@@ -84,6 +84,8 @@ void stackInput(){
             case 3:
                 blue();
                 s2.top();
+                s2.makeStack();
+                s2.display(' ');
                 break;
 
             case 4: 
@@ -107,6 +109,7 @@ void stackInput(){
 
             case 6:
                 yellow();
+                s2.makeStack();
                 s2.display(' ');
                 break;
 
@@ -123,6 +126,6 @@ void stackInput(){
                 break;
             }
 
-    std::cout << "\n\n\t\t\t\tTHE END\n\n" << std::endl;
     reset();
+    std::cout << "\n\n\t\t\t\tTHE END\n\n" << std::endl;
 }
