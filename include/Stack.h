@@ -50,7 +50,7 @@ public:
 
     int get_n(); 
 
-    void display(char separator = ' '); //
+    void display(char separator = ' '); 
     void traverse(T index, char separator = ' ');
 
     void makeStack();
