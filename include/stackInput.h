@@ -29,8 +29,10 @@ void stackInput(){
         std::cin >> c;
         std::cout << std::endl;
 
-        std::cout << "Enter the size of Stack: ";
-        std::cin >> size;
+        if(c > 0 && c < 8){
+            std::cout << "Enter the size of Stack: ";
+            std::cin >> size;
+        } 
 
         circularLinkedListStack <char> s2(size);
         s2.push('w');
