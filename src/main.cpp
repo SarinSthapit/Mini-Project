@@ -27,7 +27,7 @@ int main(){
         //DEMO
         stackDemo();
         
-        std::cout << "Do you want to use the USER INPUT Feature? (Y for Yes/N for No): ";
+        std::cout << "\nDo you want to use the USER INPUT Feature? (Y for Yes/N for No): ";
         std::cin >> response;
 
         if(response == 'Y'){
