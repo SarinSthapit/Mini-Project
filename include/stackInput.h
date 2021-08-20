@@ -12,25 +12,44 @@ Mini Project
 #pragma once
 #include <iostream>
 #include "Stack.h"
-#include "colours.h"
+#include "Colours.h"
 
 void stackInput(){
-    std::cout << "\n\n\n\nSTACK USER INPUT" << std::endl;
+    sky_blue();
+    std::cout << "\n\n\n\nSTACK USER INPUT\n" << std::endl;
         int size = 0, c = 0;
         char a;
-        std::cout << "Enter the size of Stack: ";
-        std::cin >> size;
-        circularLinkedListStack <char> s2(size);
-        s2.push('w');
-        s2.push('x');
-        s2.push('y');
-        s2.push('z');
+        
+        
         
         purple();
         std::cout << "STACK OPERATIONS:" << std::endl;
-        std::cout << "1. Push\n2. Pop\n3. Top\n4. is Empty?\n5. is Full?\n6. Display\n7. Traverse" << std::endl;
+        std::cout << "1. Push\n2. Pop\n3. Top\n4. is Empty?\n5. is Full?\n6. Display\n7. Traverse\n" << std::endl;
         std::cout << "Enter your choice: ";
         std::cin >> c;
+        std::cout << std::endl;
+
+        if(c == 1 || c == 4 || c == 5 || c == 6 || c == 7){
+            std::cout << "Enter the size of Stack: ";
+            std::cin >> size;
+        }
+
+        circularLinkedListStack <char> s2(size);
+        s2.push('w');
+        s2.makeStack();
+        s2.display(' ');
+
+        s2.push('x');
+        s2.makeStack();
+        s2.display(' ');
+
+        s2.push('y');
+        s2.makeStack();
+        s2.display(' ');
+
+        s2.push('z');
+        s2.makeStack();
+        s2.display(' ');
 
         int j=0;
         char array[] = {'a', 'b', 'c', 'd', 'e'};
@@ -51,6 +70,8 @@ void stackInput(){
                     else{
                         if(!s2.isFull()){
                             s2.push(a);
+                            s2.makeStack();
+                            s2.display(' ');
                         }  
                     }
                 }   

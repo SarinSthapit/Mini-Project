@@ -1,7 +1,7 @@
 #include <stdio.h>
-#include "colours.h"
+#include "Colours.h"
 
-//Functions for differnt colors
+//Functions for differnt colors.
 void red ()
 {
   printf("\033[1;31m");

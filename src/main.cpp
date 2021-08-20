@@ -13,7 +13,8 @@ Mini Project
 #include "Stack.h"
 #include "stackDemo.h"
 #include "stackInput.h"
-#include "colours.h"
+#include "Colours.h"
+#include "Colours.cpp"
 
 //cd build
 //g++ ../src/main.cpp -I ../include/

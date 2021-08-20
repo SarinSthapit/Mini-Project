@@ -20,14 +20,14 @@ circularLinkedList<T>::circularLinkedList()
 {
     HEAD = nullptr;
     TAIL = nullptr;
-    n = -1;
+    n = 0;
 }
 
 
 //To check if the circularly linked list is empty or not.
 template <typename T>
 bool circularLinkedList<T>::isEmpty(){
-    if(n == -1){
+    if(n == 0){
         return true;
     }
     else{
@@ -39,7 +39,7 @@ bool circularLinkedList<T>::isEmpty(){
 //To check if the circularly linked list is full or not.
 template <typename T>
 bool circularLinkedList<T>::isFull(int size){
-    if(n == (size - 1)){
+    if(n == size){
         return true;
     }
     else{
@@ -53,19 +53,12 @@ template <typename T>
 void circularLinkedList<T>::addToHead(T data){
     Node<T> *newNode = new Node<T>();
     newNode->info = data;
-    /* if(this -> isFull()){
-        throw"The Stack is already full.";
-    }*/
 
     if (this->isEmpty())
     {
         HEAD = newNode;
         TAIL = HEAD;
         n = n + 1;
-        /* std::cout << "Pushed: " << data << std::endl;
-        makeStack();
-        display(' ');
-        std::cout << std::endl; */
     }
     else{
         newNode -> next = HEAD;
@@ -221,8 +214,10 @@ Node<T> *circularLinkedList<T>::retrieve(T data, Node<T> *outputNodePointer){
 }
 
 
-//To search and return true or false based on whether the node with the data passed 
-//into the function is present or not in the circularly linked list.
+/*
+To search and return true or false based on whether the node with the data passed 
+into the function is present or not in the circularly linked list.
+*/
 template <typename T>
 bool circularLinkedList<T>::search(T data){
     if(!this -> isEmpty()){
@@ -231,7 +226,7 @@ bool circularLinkedList<T>::search(T data){
 
         while(newNode -> next != NULL){
             if(newNode -> info == data){
-                std::cout << "The searched data, " << data << " is present in the list." << std::endl;
+                //std::cout << "The searched data, " << data << " is present in the list." << std::endl;
                 return true;
             }
 
@@ -257,7 +252,7 @@ void circularLinkedList<T>::display(char separator){
 
     else{
         Node <T> *temp = HEAD;
-        for(int i = 0; i<=n; i++){
+        for(int i = 1; i<=n; i++){
             std :: cout << "\t\t\t| ";
             std :: cout << temp -> info << separator;
             std :: cout << "|" << std::endl;
@@ -318,18 +313,7 @@ int circularLinkedList<T> :: get_n(){
 template <class T>
 void circularLinkedList <T>::makeStack(int size){
     n = get_n();
-    for(int i = 1; i < (size - n); i++){
+    for(int i = 1; i <= (size - n); i++){
         std::cout << "\t\t\t|   |" << std::endl;
     }
 }
-/* 
-template <class T>
-void circularLinkedList <T> :: visualize(int size){
-    n= get_n();
-
-    for(int i = 1; i<size; i++){
-        for(int j =1; j < n; j++){
-
-        }
-    }
-} */

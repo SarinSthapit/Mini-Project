@@ -13,6 +13,7 @@ Mini Project
 #include <iostream>
 #include "../include/Stack.h"
 #include "../include/circularLinkedList.h"
+#include "Colours.h"
 
 
 //Constructor for the circularly linked list.
@@ -46,6 +47,7 @@ void circularLinkedListStack <T> :: push(T data)
         throw"The Stack is full";
     }
     else{
+        green();
         list.addToHead(data);
         std::cout << "Pushing " << data << "...." << std::endl;
         //system("Color 0A");
@@ -60,7 +62,8 @@ void circularLinkedListStack <T> :: push(T data)
 //To remove data from the top of the stack.
 template <typename T>
 T circularLinkedListStack <T>:: pop()
-{
+{   
+    red();
     T data;
     data = list.removeFromHead();
     std::cout << "Poping " << data << "...." << std::endl;
@@ -75,6 +78,7 @@ T circularLinkedListStack <T>:: pop()
 template <typename T>
 T circularLinkedListStack <T>:: top()
 {
+    blue();
     T top;
     top = list.getHead();
     std::cout << "TOP: " << top << std::endl;
@@ -106,6 +110,7 @@ int circularLinkedListStack <T>::get_n(){
 //To build a stack.
 template <class T>
 void circularLinkedListStack <T>::makeStack(){
+    reset();
     list.makeStack(maxStackSize);
 }
 

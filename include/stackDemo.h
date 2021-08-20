@@ -12,10 +12,11 @@ Mini Project
 #pragma once
 #include <iostream>
 #include "Stack.h"
-#include "colours.h"
+#include "Colours.h"
 
 void stackDemo(){
-    std::cout << "STACK DEMO: " << std::endl; 
+    sky_blue();
+    std::cout << "STACK DEMO:\n" << std::endl; 
         circularLinkedListStack <int> s(5);
         if(s.isEmpty()){
             std::cout << "The Stack is empty." << std::endl;
@@ -31,8 +32,7 @@ void stackDemo(){
             std::cout << "The Stack is not full." << std::endl;
         }
     
-        green();
-        std::cout << "PUSHING INTO THE STACK: " << std::endl;
+        std::cout << std::endl;
         s.push(0);
         s.makeStack();
         s.display(' ');
@@ -103,17 +103,27 @@ void stackDemo(){
         s2 = s.getTail();
         std::cout << "Next of Tail: ";
         std::cout << s2 -> next -> info << std::endl;
-        //s.pop();
+        
         s.top();
+        s.makeStack();
+        s.display(' ');
+
         if(s.isEmpty()){
-            std::cout << "The Stack is empty." << std::endl;
+            std::cout << "\nThe Stack is empty." << std::endl;
         }
         else{
-            std::cout << "The Stack is not empty." << std::endl;
+            std::cout << "\nThe Stack is not empty." << std::endl;
+        }
+
+        if(s.isFull()){
+            std::cout << "\nThe Stack is full." << std::endl;
+        }
+        else{
+            std::cout << "\nThe Stack is not full." << std::endl;
         }
 
 
-        std::cout << "DISPLAYING THE STACK STARTING FROM TOP:" << std::endl;
+        std::cout << "\nDISPLAYING THE STACK STARTING FROM TOP:\n" << std::endl;
         s.makeStack();
         s.display(' ');
 
