@@ -273,7 +273,7 @@ void circularLinkedList <T>::traverse(T index, char separator){
     }
     if(search(index)){
         std::cout << "TRAVERSAL STARTING FROM:" << std::endl;
-        int i=0;
+        int i = 1;
         Node <T> *output = new Node <T>;
         output = this->retrieve(index, output); 
         n = get_n();    

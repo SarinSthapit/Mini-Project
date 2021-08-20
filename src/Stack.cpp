@@ -44,7 +44,7 @@ template <typename T>
 void circularLinkedListStack <T> :: push(T data)
 {
     if(list.isFull(maxStackSize)){
-        throw"The Stack is full.mm";
+        throw"The Stack is full.";
     }
     else{
         green();
