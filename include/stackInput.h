@@ -29,10 +29,8 @@ void stackInput(){
         std::cin >> c;
         std::cout << std::endl;
 
-        if(c == 1 || c == 4 || c == 5 || c == 6 || c == 7){
-            std::cout << "Enter the size of Stack: ";
-            std::cin >> size;
-        }
+        std::cout << "Enter the size of Stack: ";
+        std::cin >> size;
 
         circularLinkedListStack <char> s2(size);
         s2.push('w');
@@ -56,79 +54,74 @@ void stackInput(){
 
         switch (c)
         {
-        case 1:
-            for (int i = 0; i < size; i++){
-                if(!s2.isFull()){
-                    green();
-                    std::cout << "Enter the data (Press * to end 'push'): ";;
-                    std::cin >> a;
-                    if(a == '*'){
-                        s2.makeStack();
-                        s2.display(' ');
-                        break;
-                    }
-                    else{
-                        if(!s2.isFull()){
-                            s2.push(a);
+            case 1:
+                for (int i = 0; i < size; i++){
+                    if(!s2.isFull()){
+                        green();
+                        std::cout << "Enter the data (Press * to end 'push'): ";;
+                        std::cin >> a;
+                        if(a == '*'){
                             s2.makeStack();
                             s2.display(' ');
-                        }  
-                    }
-                }   
+                            break;
+                        }
+                        else{
+                            if(!s2.isFull()){
+                                s2.push(a);
+                                s2.makeStack();
+                                s2.display(' ');
+                            }  
+                        }
+                    }   
+                }
+                break;
+
+            case 2:
+                red();
+                s2.pop();
+                break;
+
+            case 3:
+                blue();
+                s2.top();
+                break;
+
+            case 4: 
+                reset();
+                if(s2.isEmpty()){
+                    std::cout << "The Stack is empty." << std::endl;
+                }
+                else{
+                    std::cout << "The Stack is not empty." << std::endl;
+                }
+                break;
+
+            case 5: 
+                if(s2.isFull()){
+                    std::cout << "The Stack is full." << std::endl;
+                }
+                else{
+                    std::cout << "The Stack is not full." << std::endl;
+                }
+                break;
+
+            case 6:
+                yellow();
+                s2.display(' ');
+                break;
+
+            case 7:
+                char index;
+                std::cout << "Enter the starting point: " << std::endl;
+                std::cin >> index;
+                s2.traverse(index, ',');
+                break;
+
+            default:
+                reset();
+                std::cout << "Invalid Choice!" << std::endl;
+                break;
             }
-            break;
-
-        case 2:
-            /* for(j = 0; j < size; j++){
-                int ar = j % 5;
-                //char b = array[ar];
-                s2.push(array[ar]);
-            } */
-            red();
-            s2.pop();
-            break;
-
-        case 3:
-            blue();
-            s2.top();
-            break;
-
-        case 4: 
-            reset();
-            if(s2.isEmpty()){
-                std::cout << "The Stack is empty." << std::endl;
-            }
-            else{
-                std::cout << "The Stack is not empty." << std::endl;
-            }
-            break;
-
-        case 5: 
-            if(s2.isFull()){
-                std::cout << "The Stack is full." << std::endl;
-            }
-            else{
-                std::cout << "The Stack is not full." << std::endl;
-            }
-            break;
-
-        case 6:
-            yellow();
-            s2.display(' ');
-            break;
-
-        case 7:
-            char index;
-            std::cout << "Enter the starting point: " << std::endl;
-            std::cin >> index;
-            s2.traverse(index, ',');
-            break;
-
-        default:
-            reset();
-            std::cout << "Invalid Choice!" << std::endl;
-            break;
-        }
 
     std::cout << "\n\n\t\t\t\tTHE END\n\n" << std::endl;
     reset();
