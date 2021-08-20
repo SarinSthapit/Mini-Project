@@ -34,6 +34,7 @@ void stackInput(){
             std::cin >> size;
         } 
         else{
+            size = 4;
             std::cout << "Invalid Choice." << std::endl;
         }
 
