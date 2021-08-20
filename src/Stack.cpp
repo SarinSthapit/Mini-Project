@@ -15,17 +15,22 @@ Mini Project
 #include "../include/circularLinkedList.h"
 
 
+//Constructor for the circularly linked list.
 template <typename T>
 circularLinkedListStack<T>::circularLinkedListStack(int maxStackSize){
     this->maxStackSize = maxStackSize;
 }
 
+
+//To check if the stack is empty or not.
 template <typename T>
 bool circularLinkedListStack <T> :: isEmpty()
 {
     return list.isEmpty();
 }
 
+
+//To check if the stack is full or not.
 template <typename T>
 bool circularLinkedListStack <T> :: isFull()
 {
@@ -33,29 +38,40 @@ bool circularLinkedListStack <T> :: isFull()
 }
 
 
+//To add data at the top of the stack.
 template <typename T>
 void circularLinkedListStack <T> :: push(T data)
 {
-    list.addToHead(data);
-    std::cout << "Pushed: " << data << std::endl;
-    makeStack();
-    display(' ');
-    std::cout << std::endl;
+    if(list.isFull(maxStackSize)){
+        throw"The Stack is full";
+    }
+    else{
+        list.addToHead(data);
+        std::cout << "Pushing " << data << "...." << std::endl;
+        //system("Color 0A");
+        //makeStack();
+        //display(' ');
+        std::cout << std::endl;
+    }
+    
 }
 
 
+//To remove data from the top of the stack.
 template <typename T>
 T circularLinkedListStack <T>:: pop()
 {
     T data;
     data = list.removeFromHead();
-    std::cout << "Poped: " << data << std::endl;
-    makeStack();
-    display(' ');
+    std::cout << "Poping " << data << "...." << std::endl;
+    //system("Color 0B");
+    
     std::cout << std::endl;
     return data;
 }
 
+
+//To display the data at the top of the stack.
 template <typename T>
 T circularLinkedListStack <T>:: top()
 {
@@ -66,52 +82,38 @@ T circularLinkedListStack <T>:: top()
 }
 
 
+//To return the TAIL node of the stack.
 template <typename T>
 Node<T> * circularLinkedListStack <T> :: getTail(){
     return list.getTail();
 }
 
+
+//To display all the data of respective nodes present in the stack from HEAD to TAIL.
 template <typename T>
 void circularLinkedListStack <T>:: display(char separator){
     list.display(' ');
 }
 
 
-
+//To return the number of elements present in the stack.
 template <class T>
 int circularLinkedListStack <T>::get_n(){
     return list.get_n();
 }
 
 
-
+//To build a stack.
 template <class T>
 void circularLinkedListStack <T>::makeStack(){
     list.makeStack(maxStackSize);
 }
 
 
-
+//To display all the data of respective nodes present in the stack from node whose data matches index to remaining others in order.
 template <class T>
 void circularLinkedListStack <T>::traverse(T index, char separator){
     list.traverse(index, ',');
-    /* if(isEmpty()){
-        std::cout << "The Stack is empty." << std::endl;
-    }
-    if(list.search(index)){
-        int i=0;
-        Node <T> *output = new Node <T>;
-        output = list.retrieve(index, output); 
-            
-        while(i <= n){
-            std::cout << output -> info << separator;
-            output = output -> next; 
-            i++;      
-        }
-    }
-    else{
-        std::cout << "The data entered does not exist in the stack." << std::endl;
-    } */
 }
 
 

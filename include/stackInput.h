@@ -12,6 +12,7 @@ Mini Project
 #pragma once
 #include <iostream>
 #include "Stack.h"
+#include "colours.h"
 
 void stackInput(){
     std::cout << "\n\n\n\nSTACK USER INPUT" << std::endl;
@@ -25,7 +26,7 @@ void stackInput(){
         s2.push('y');
         s2.push('z');
         
-
+        purple();
         std::cout << "STACK OPERATIONS:" << std::endl;
         std::cout << "1. Push\n2. Pop\n3. Top\n4. is Empty?\n5. is Full?\n6. Display\n7. Traverse" << std::endl;
         std::cout << "Enter your choice: ";
@@ -39,6 +40,7 @@ void stackInput(){
         case 1:
             for (int i = 0; i < size; i++){
                 if(!s2.isFull()){
+                    green();
                     std::cout << "Enter the data (Press * to end 'push'): ";;
                     std::cin >> a;
                     if(a == '*'){
@@ -61,15 +63,17 @@ void stackInput(){
                 //char b = array[ar];
                 s2.push(array[ar]);
             } */
+            red();
             s2.pop();
             break;
 
         case 3:
-            
+            blue();
             s2.top();
             break;
 
         case 4: 
+            reset();
             if(s2.isEmpty()){
                 std::cout << "The Stack is empty." << std::endl;
             }
@@ -88,6 +92,7 @@ void stackInput(){
             break;
 
         case 6:
+            yellow();
             s2.display(' ');
             break;
 
@@ -99,10 +104,11 @@ void stackInput(){
             break;
 
         default:
+            reset();
             std::cout << "Invalid Choice!" << std::endl;
             break;
         }
 
     std::cout << "\n\n\t\t\t\tTHE END\n\n" << std::endl;
-
+    reset();
 }

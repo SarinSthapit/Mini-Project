@@ -13,6 +13,8 @@ Mini Project
 #include <iostream>
 #include "../include/circularLinkedList.h"
 
+
+//Constructor for the circularly linked list.
 template <typename T>
 circularLinkedList<T>::circularLinkedList()
 {
@@ -22,6 +24,7 @@ circularLinkedList<T>::circularLinkedList()
 }
 
 
+//To check if the circularly linked list is empty or not.
 template <typename T>
 bool circularLinkedList<T>::isEmpty(){
     if(n == -1){
@@ -32,6 +35,8 @@ bool circularLinkedList<T>::isEmpty(){
     }
 }
 
+
+//To check if the circularly linked list is full or not.
 template <typename T>
 bool circularLinkedList<T>::isFull(int size){
     if(n == (size - 1)){
@@ -43,15 +48,16 @@ bool circularLinkedList<T>::isFull(int size){
 }
 
 
+//To add a node at the top or head of the circularly linked list.
 template <typename T>
 void circularLinkedList<T>::addToHead(T data){
     Node<T> *newNode = new Node<T>();
     newNode->info = data;
     /* if(this -> isFull()){
         throw"The Stack is already full.";
-    } */
+    }*/
 
-    if (n == -1)
+    if (this->isEmpty())
     {
         HEAD = newNode;
         TAIL = HEAD;
@@ -71,10 +77,11 @@ void circularLinkedList<T>::addToHead(T data){
 }
 
 
+//To add a node at the bottom or tail of the circularly linked list.
 template <typename T>
 void circularLinkedList<T>::addToTail(T data){
     Node<T> *newNode = new Node<T>(data, NULL);
-    if(HEAD == nullptr)
+    if(this -> isEmpty())
     {
         HEAD = newNode;
         TAIL = newNode;
@@ -88,6 +95,7 @@ void circularLinkedList<T>::addToTail(T data){
 }
 
 
+//To add a node to the next of a preceeding node passed in the circularly linked list.
 template <typename T>
 void circularLinkedList<T>::add(T data, Node<T> *predecessor){
     Node<T> *newNode = new Node<T>(data, predecessor->next);
@@ -96,9 +104,10 @@ void circularLinkedList<T>::add(T data, Node<T> *predecessor){
 }
 
 
+//To remove a node at the top or head of the circularly linked list.
 template <typename T>
 T circularLinkedList<T>::removeFromHead(){
-    if(n == -1){
+    if(this->isEmpty()){
         throw"The Stack is empty.";
     }
 
@@ -124,6 +133,7 @@ T circularLinkedList<T>::removeFromHead(){
 }
 
 
+//To remove a node at the bottom or tail of the circularly linked list.
 template <typename T>
 T circularLinkedList<T>:: removeFromTail(){
     if(!this->isEmpty()){
@@ -151,13 +161,14 @@ T circularLinkedList<T>:: removeFromTail(){
     }
 
     else{
-        std::cout << "The list is empty." << std::endl;
+        std::cout << "The stack is empty." << std::endl;
         return 0;
     }
 
 }
 
 
+//To remove a node whose data matches to the data added from the circularly linked list.
 template <typename T>
 void circularLinkedList<T>:: remove(T data){
     Node<T> *current = new Node<T>;
@@ -189,6 +200,7 @@ void circularLinkedList<T>:: remove(T data){
 } 
 
 
+//To retrieve a node from the circularly linked list whose data matches the data passed as a parameter.
 template <typename T>
 Node<T> *circularLinkedList<T>::retrieve(T data, Node<T> *outputNodePointer){
     Node<T> *temp = new Node<T>;
@@ -209,6 +221,8 @@ Node<T> *circularLinkedList<T>::retrieve(T data, Node<T> *outputNodePointer){
 }
 
 
+//To search and return true or false based on whether the node with the data passed 
+//into the function is present or not in the circularly linked list.
 template <typename T>
 bool circularLinkedList<T>::search(T data){
     if(!this -> isEmpty()){
@@ -234,6 +248,7 @@ bool circularLinkedList<T>::search(T data){
 }
 
 
+//To display all the data of respective nodes present in the circularly linked list from HEAD to TAIL.
 template <typename T>
 void circularLinkedList<T>::display(char separator){
     if(isEmpty()){
@@ -255,13 +270,14 @@ void circularLinkedList<T>::display(char separator){
 }
 
 
-
+//To display all the data of respective nodes present in the circularly linked list from node whose data matches index to remaining others in order.
 template <class T>
 void circularLinkedList <T>::traverse(T index, char separator){
-    if(isEmpty()){
+    if(this->isEmpty()){
         std::cout << "The Stack is empty." << std::endl;
     }
     if(search(index)){
+        std::cout << "TRAVERSAL STARTING FROM:" << std::endl;
         int i=0;
         Node <T> *output = new Node <T>;
         output = this->retrieve(index, output); 
@@ -279,22 +295,26 @@ void circularLinkedList <T>::traverse(T index, char separator){
 
 
 
+//To return the data of the HEAD node.
 template <typename T>
 T circularLinkedList<T>:: getHead(){
     return HEAD ->info;
 }
 
+//To return the TAIL node.
 template <typename T>
 Node<T> *circularLinkedList<T>:: getTail(){
     return TAIL;
 }
 
+//To get the number of elements present in the circularly linked list.
 template <typename T>
 int circularLinkedList<T> :: get_n(){
     return n;
 }
 
 
+//To build a stack.
 template <class T>
 void circularLinkedList <T>::makeStack(int size){
     n = get_n();
@@ -302,3 +322,14 @@ void circularLinkedList <T>::makeStack(int size){
         std::cout << "\t\t\t|   |" << std::endl;
     }
 }
+/* 
+template <class T>
+void circularLinkedList <T> :: visualize(int size){
+    n= get_n();
+
+    for(int i = 1; i<size; i++){
+        for(int j =1; j < n; j++){
+
+        }
+    }
+} */

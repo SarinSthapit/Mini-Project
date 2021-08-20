@@ -61,16 +61,17 @@ public:
 
     //To build a stack form.
     void makeStack(int size);
+    //void visualize(int size);
 
     T getHead();
     Node<T> * getTail();
     int get_n();
     
-    int n;
+    int n; //Number of elements present in the circular linked list.
 
 private: 
-    Node<T> *HEAD;
-    Node<T> *TAIL;
+    Node<T> *HEAD; //HEAD Node of the circularly linked list.
+    Node<T> *TAIL; //TAIL Node of the circularly linked list.
 };
 
 #include "../src/circularLinkedList.cpp"

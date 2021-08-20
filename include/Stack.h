@@ -41,13 +41,16 @@ public:
     circularLinkedListStack(int maxStackSize);
     bool isEmpty();
     bool isFull();
-    void push(T data);
-    T pop();
-    T top();
-    Node<T> * getTail();
-    int get_n();
 
-    void display(char separator = ' ');
+    void push(T data); //To add data in the stack.
+    T pop(); //To remove data from stack.
+
+    T top(); //To display element at the top of the stack.
+    Node<T> * getTail(); //To return TAIL node of the stack.
+
+    int get_n(); 
+
+    void display(char separator = ' '); //
     void traverse(T index, char separator = ' ');
 
     void makeStack();
