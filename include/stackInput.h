@@ -16,7 +16,7 @@ Mini Project
 
 void stackInput(){
     sky_blue();
-    std::cout << "\n\n\n\nSTACK USER INPUT\n" << std::endl;
+    std::cout << "\n\n\n\nSTACK OPERATIONS USER INPUT:\n" << std::endl;
         int size = 0, c = 0;
         char a;
         
@@ -116,7 +116,8 @@ void stackInput(){
                 break;
 
             case 6:
-                yellow();
+                reset();
+                std::cout << "\nDISPLAYING THE STACK STARTING FROM TOP:\n" << std::endl;
                 s2.makeStack();
                 s2.display(' ');
                 break;

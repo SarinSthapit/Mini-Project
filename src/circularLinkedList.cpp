@@ -246,7 +246,7 @@ bool circularLinkedList<T>::search(T data){
 //To display all the data of respective nodes present in the circularly linked list from HEAD to TAIL.
 template <typename T>
 void circularLinkedList<T>::display(char separator){
-    if(isEmpty()){
+    if(this->isEmpty()){
         std::cout << "The list is empty." << std::endl;
     }
 
@@ -266,6 +266,7 @@ void circularLinkedList<T>::display(char separator){
 
 
 //To display all the data of respective nodes present in the circularly linked list from node whose data matches index to remaining others in order.
+//To verify the correct use of circularly linked list.
 template <class T>
 void circularLinkedList <T>::traverse(T index, char separator){
     if(this->isEmpty()){

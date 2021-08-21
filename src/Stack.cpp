@@ -23,22 +23,6 @@ circularLinkedListStack<T>::circularLinkedListStack(int maxStackSize){
 }
 
 
-//To check if the stack is empty or not.
-template <typename T>
-bool circularLinkedListStack <T> :: isEmpty()
-{
-    return list.isEmpty();
-}
-
-
-//To check if the stack is full or not.
-template <typename T>
-bool circularLinkedListStack <T> :: isFull()
-{
-    return list.isFull(maxStackSize);
-}
-
-
 //To add data at the top of the stack.
 template <typename T>
 void circularLinkedListStack <T> :: push(T data)
@@ -50,9 +34,6 @@ void circularLinkedListStack <T> :: push(T data)
         green();
         list.addToHead(data);
         std::cout << "Pushing " << data << "...." << std::endl;
-        //system("Color 0A");
-        //makeStack();
-        //display(' ');
         std::cout << std::endl;
     }
     
@@ -86,6 +67,23 @@ T circularLinkedListStack <T>:: top()
 }
 
 
+//To check if the stack is empty or not.
+template <typename T>
+bool circularLinkedListStack <T> :: isEmpty()
+{
+    return list.isEmpty();
+}
+
+
+//To check if the stack is full or not.
+template <typename T>
+bool circularLinkedListStack <T> :: isFull()
+{
+    return list.isFull(maxStackSize);
+}
+
+
+
 //To return the TAIL node of the stack.
 template <typename T>
 Node<T> * circularLinkedListStack <T> :: getTail(){
@@ -116,6 +114,7 @@ void circularLinkedListStack <T>::makeStack(){
 
 
 //To display all the data of respective nodes present in the stack from node whose data matches index to remaining others in order.
+//To verify the correct use of circularly linked list.
 template <class T>
 void circularLinkedListStack <T>::traverse(T index, char separator){
     list.traverse(index, ',');
