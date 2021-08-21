@@ -20,6 +20,8 @@ Mini Project
 //g++ ../src/main.cpp -I ../include/
 //./a.exe
 
+
+//main.cpp
 int main(){
     try{
         char response;
@@ -34,8 +36,11 @@ int main(){
             //USER INPUT
             stackInput();
         }
-        else{
+        else if(response == 'N'){
             std::cout << "\n\n\t\t\t\tTHE END\n\n" << std::endl;
+        }
+        else{
+            throw"\n\nInvalid Choice.\n\n";
         }
         
         

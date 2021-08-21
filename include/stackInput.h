@@ -34,8 +34,9 @@ void stackInput(){
             std::cin >> size;
         } 
         else{
+            reset();
             size = 4;
-            std::cout << "Invalid Choice." << std::endl;
+            throw "\n\nInvalid Choice.\n\n";
         }
 
         circularLinkedListStack <char> s2(size);
