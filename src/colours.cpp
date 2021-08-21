@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <iostream>
 #include "Colours.h"
 
 //Functions for differnt colors.

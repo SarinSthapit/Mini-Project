@@ -11,7 +11,6 @@ Mini Project
 
 #pragma once
 #include <iostream>
-#include <vector>
 #include "circularLinkedList.h"
 
 /*
